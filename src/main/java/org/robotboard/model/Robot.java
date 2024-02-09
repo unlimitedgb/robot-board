@@ -2,7 +2,6 @@ package org.robotboard.model;
 
 import lombok.Getter;
 import lombok.Setter;
-import org.robotboard.common.Direction;
 
 @Getter
 @Setter

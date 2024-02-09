@@ -1,6 +1,6 @@
 package org.robotboard.service;
 
-import org.robotboard.common.Direction;
+import org.robotboard.model.Direction;
 import org.robotboard.model.Robot;
 
 public class RobotServiceImplementation implements RobotServiceInterface{
@@ -38,7 +38,7 @@ public class RobotServiceImplementation implements RobotServiceInterface{
     }
 
     @Override
-    public void right (Robot robot) {
+    public void right (Robot robot) throws Exception {
         switch (robot.getDirection()) {
             case WEST:
                 robot.setDirection(Direction.NORTH);
@@ -53,12 +53,12 @@ public class RobotServiceImplementation implements RobotServiceInterface{
                 robot.setDirection(Direction.EAST);
                 break;
             default:
-                System.out.println("Invalid Direction");
+                throw new Exception("Invalid Direction");
         }
     }
 
     @Override
-    public void left (Robot robot) {
+    public void left (Robot robot) throws Exception {
         switch (robot.getDirection()) {
             case EAST:
                 robot.setDirection(Direction.NORTH);
@@ -73,7 +73,7 @@ public class RobotServiceImplementation implements RobotServiceInterface{
                 robot.setDirection(Direction.EAST);
                 break;
             default:
-                System.out.println("Invalid Direction");
+                throw new Exception("Invalid Direction");
         }
     }
 }

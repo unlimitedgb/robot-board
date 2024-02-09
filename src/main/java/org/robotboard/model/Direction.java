@@ -1,4 +1,4 @@
-package org.robotboard.common;
+package org.robotboard.model;
 
 public enum Direction {
     NORTH,

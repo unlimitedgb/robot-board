@@ -2,21 +2,21 @@ package org.robotboard.validator;
 
 public class InstructionValidator {
 
-    public static boolean doesInstructionsExist(String[] instructions) {
-        boolean result = false;
-        if (instructions.length != 0) {
-            result = true;
-        }
+    public static final String NO_INSTRUCTIONS_RECEIVED_EXCEPTION_MESSAGE = "No instructions received";
+    public static final String INVALID_PLACEMENT_INSTRUCTIONS_RECEIVED_EXCEPTION_MESSAGE =
+            "Invalid placement instructions received";
 
-        return result;
+    public static boolean doesInstructionsExist(String[] instructions) throws Exception {
+        if (instructions.length != 0) {
+            return  true;
+        }
+        throw new Exception(NO_INSTRUCTIONS_RECEIVED_EXCEPTION_MESSAGE);
     }
 
-    public static boolean doesPlaceCommandHaveThreeProperties(String[] initialPosition) {
-        boolean result = false;
+    public static boolean doesPlaceInstructionHaveThreeProperties(String[] initialPosition) throws Exception {
         if (initialPosition.length == 3) {
-            result = true;
+            return true;
         }
-
-        return result;
+        throw new Exception(INVALID_PLACEMENT_INSTRUCTIONS_RECEIVED_EXCEPTION_MESSAGE);
     }
 }

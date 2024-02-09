@@ -1,15 +1,13 @@
 package org.robotboard;
 
-import org.robotboard.service.InstructionServiceImplementation;
-
-import java.util.*;
+import org.robotboard.executor.InstructionExecutor;
 
 public class Main {
 
     public static void main(String[] instructions) {
-        InstructionServiceImplementation instructionService = new InstructionServiceImplementation();
+        InstructionExecutor instructionExecutor = new InstructionExecutor();
         try {
-            System.out.println(instructionService.execute(instructions));
+            System.out.println(instructionExecutor.execute(instructions));
         } catch (Exception exception) {
             System.out.println(exception.getMessage());
         }

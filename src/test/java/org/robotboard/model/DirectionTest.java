@@ -1,40 +1,33 @@
-package org.robotboard.common;
+package org.robotboard.model;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import org.junit.jupiter.api.Test;
 
 public class DirectionTest {
 
-    private final String NORTH_DIRECTION = "North";
-    private final String SOUTH_DIRECTION = "SOUTH";
-    private final String EAST_DIRECTION = "east";
-    private final String WEST_DIRECTION = "WeSt";
-    private final String INVALID_DIRECTION = "Invalid";
-
     @Test
     public void testGetDirectionReturnsNorthWhenNorthIsPassedInAsAString() {
-        assertEquals(Direction.NORTH, Direction.getDirection(NORTH_DIRECTION));
+        assertEquals(Direction.NORTH, Direction.getDirection("North"));
     }
 
     @Test
     public void testGetDirectionReturnsEastWhenEastIsPassedInAsAString() {
-        assertEquals(Direction.EAST, Direction.getDirection(EAST_DIRECTION));
+        assertEquals(Direction.EAST, Direction.getDirection("east"));
     }
 
     @Test
     public void testGetDirectionReturnsSouthWhenSouthIsPassedInAsAString() {
-        assertEquals(Direction.SOUTH, Direction.getDirection(SOUTH_DIRECTION));
+        assertEquals(Direction.SOUTH, Direction.getDirection("SOUTH"));
     }
 
     @Test
     public void testGetDirectionReturnsWestWhenWestIsPassedInAsAString() {
-        assertEquals(Direction.WEST, Direction.getDirection(WEST_DIRECTION));
+        assertEquals(Direction.WEST, Direction.getDirection("WeSt"));
     }
 
     @Test
     public void testGetDirectionReturnsDEFAULTWhenInvalidDirectionIsPassedInAsAString() {
-        assertEquals(Direction.DEFAULT, Direction.getDirection(INVALID_DIRECTION));
+        assertEquals(Direction.DEFAULT, Direction.getDirection("Invalid Direction"));
     }
 
     @Test
